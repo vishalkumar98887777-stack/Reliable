@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="monetag" content="b174d138f3ce6071bfacfb5d8af784fa">
+<title>🎉 ₹10,000 Giveaway 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Reset & body */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#f0f4ff;overflow-x:hidden;position:relative;animation:gradBG 15s ease infinite;}
+@keyframes gradBG{0%{background:linear-gradient(120deg,#f0f4ff,#d0e7ff);}50%{background:linear-gradient(120deg,#d0e7ff,#f0f4ff);}100%{background:linear-gradient(120deg,#f0f4ff,#d0e7ff);}}
+
+.container{max-width:600px;margin:50px auto;padding:30px;background:rgba(255,255,255,0.95);border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.15);text-align:center;position:relative;overflow:hidden;}
+h1{font-size:32px;margin-bottom:15px;color:#111827;animation:bounce 1s infinite alternate;}
+@keyframes bounce{0%{transform:translateY(0);}100%{transform:translateY(-5px);}}
+
+form{display:flex;flex-direction:column;gap:15px;}
+input,textarea{padding:14px 16px;font-size:15px;border-radius:12px;border:1px solid #d1d5db;outline:none;transition:0.3s;}
+input:focus,textarea:focus{border-color:#2563eb;box-shadow:0 0 10px rgba(37,99,235,0.2);}
+textarea{resize:none;}
+.btn-submit{background:linear-gradient(135deg,#2563eb,#3b82f6);color:white;font-weight:600;padding:14px 20px;border-radius:12px;border:none;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.2);transition:all 0.3s ease;}
+.btn-submit:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+.join-channel{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:12px;display:inline-block;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.15);transition:0.3s;}
+.join-channel:hover{transform:translateY(-3px) scale(1.03);}
+
+/* Lifafa */
+#lifafaBox{display:none;position:relative;width:180px;height:120px;margin:30px auto;cursor:pointer;perspective:600px;animation:lifafaIdle 2s ease-in-out infinite alternate;box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+@keyframes lifafaIdle{0%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-10px) rotate(2deg);}100%{transform:translateY(0) rotate(-2deg);}}
+
+.lifafa-body{position:absolute;bottom:0;width:100%;height:100%;background:#ffecb3;border-radius:5px;border:1px solid #fbc02d;z-index:1;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.lifafa-flap{position:absolute;top:0;width:100%;height:50%;background:#fdd835;border-radius:5px 5px 0 0;transform-origin:top;z-index:2;transition:transform 0.7s;box-shadow:inset 0 -2px 5px rgba(0,0,0,0.1);overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:600;color:#111827;font-size:14px;}
+#lifafaBox.open .lifafa-flap{transform: rotateX(-180deg);}
+.lifafa-flap::after{content:'';position:absolute;top:0;left:-50%;width:50%;height:100%;background:linear-gradient(120deg,rgba(255,255,255,0.6),rgba(255,255,255,0));transform:skewX(-20deg);animation:glimmer 2s infinite;}
+@keyframes glimmer{0%{left:-50%;}50%{left:100%;}100%{left:-50%;}}
+.lifafa-text{position:relative;z-index:5;pointer-events:none;}
+.lifafa-text span{margin-left:5px;}
+#preRewards{position:absolute;top:-30px;left:50%;transform:translateX(-50%);pointer-events:none;}
+#winnerText{display:none;margin-top:20px;font-size:28px;font-weight:700;color:#111827;text-shadow:0 0 10px #f59e0b;animation:pop 0.5s ease;}
+@keyframes pop{0%{transform:scale(0.5);}100%{transform:scale(1);}}
+#suspenseText{display:none;margin-top:20px;font-size:20px;color:#111827;font-weight:600;animation:fadeIn 0.5s ease;}
+@keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+
+/* Share section */
+.share-section{display:none;margin-top:20px;}
+.share-section p{margin-bottom:10px;font-size:18px;}
+.share-btn{display:inline-block;margin:5px;padding:12px 20px;border-radius:50px;color:white;font-weight:600;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.2);transition:0.3s;animation:shareBounce 2s infinite alternate;}
+.share-btn.telegram{background:#0088cc;}
+.share-btn.whatsapp{background:#25d366;}
+.share-btn:hover{transform:translateY(-3px) scale(1.05);}
+@keyframes shareBounce{0%{transform:translateY(0);}100%{transform:translateY(-6px);}}
+#shareHint{font-size:18px;font-weight:600;margin-bottom:10px;animation:floatHint 2s infinite alternate;}
+@keyframes floatHint{0%{transform:translateY(0);}100%{transform:translateY(-8px);}}
+
+#claimBtn{display:none;margin-top:20px;padding:14px 25px;font-size:16px;border:none;border-radius:12px;color:white;background:linear-gradient(135deg,#2563eb,#3b82f6);cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.2);transition:0.3s;}
+#claimBtn:hover{transform:translateY(-3px) scale(1.05);}
+.glowClaim{animation:glow 1.5s infinite alternate;}
+@keyframes glow{0%{box-shadow:0 0 5px #2563eb;}50%{box-shadow:0 0 20px #3b82f6;}100%{box-shadow:0 0 5px #2563eb;}}
+
+/* Floating emojis */
+.floating-emoji{position:absolute;font-size:28px;animation:floatEmoji linear infinite;}
+@keyframes floatEmoji{0%{transform:translateY(100vh) rotate(0deg);opacity:0.8;}100%{transform:translateY(-50px) rotate(360deg);opacity:0;}}
+
+/* Rewards and sparkles */
+.reward{position:absolute;font-size:24px;z-index:999;pointer-events:none;}
+.reward-sparkle{position:absolute;font-size:14px;opacity:0.7;pointer-events:none;animation:flyReward 1s forwards;}
+@keyframes flyReward{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(-150px) rotate(360deg) scale(1.2);opacity:0;}}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🎉 ₹10,000 Giveaway 🎉</h1>
+<a href="https://t.me/Quantex_coin" target="_blank" class="join-channel" id="joinBtn">🚀 Join Channel</a>
+
+<form id="giveawayForm">
+<input type="text" name="name" placeholder="📝 Your Name" required>
+<input type="text" name="profession" placeholder="💼 Profession" autocomplete="off" required>
+<input type="email" name="email" placeholder="📧 Email" required>
+<input type="tel" name="phone" placeholder="📱 Phone Number (Optional)">
+<textarea name="message" placeholder='✍️ Write "Giveaway"' required></textarea>
+<button type="submit" class="btn-submit">Submit Entry 🎁</button>
+</form>
+
+<div id="lifafaBox">
+  <div class="lifafa-body"></div>
+  <div class="lifafa-flap">
+    <div class="lifafa-text">Try your luck <span>🍀</span></div>
+  </div>
+  <div id="preRewards"></div>
+</div>
+
+<div id="suspenseText"></div>
+<div id="winnerText">🎉 Congratulations! You won ₹10,000! 🎉</div>
+
+<div class="share-section">
+  <p id="shareHint">👉 Share for higher chances! 🎉</p>
+  <span class="share-btn telegram" id="shareTelegram">📲 Telegram</span>
+  <span class="share-btn whatsapp" id="shareWhatsApp">💬 WhatsApp</span>
+  <p id="shareCounter">0 / 10 shared</p>
+</div>
+
+<button id="claimBtn">Claim Your Prize 🏆</button>
+<audio id="coinSound" src="https://www.soundjay.com/misc/sounds/coin-drop-1.mp3"></audio>
+
+<div class="floating-emoji" style="left:10%; animation-duration:8s;">🎉</div>
+<div class="floating-emoji" style="left:40%; animation-duration:10s;">✨</div>
+<div class="floating-emoji" style="left:70%; animation-duration:9s;">💰</div>
+<canvas class="confetti"></canvas>
+
+<script>
+const form=document.getElementById('giveawayForm');
+const lifafa=document.getElementById('lifafaBox');
+const suspenseText=document.getElementById('suspenseText');
+const winnerText=document.getElementById('winnerText');
+const shareSection=document.querySelector('.share-section');
+const preRewards=document.getElementById('preRewards');
+const coinSound=document.getElementById('coinSound');
+const shareCounter=document.getElementById('shareCounter');
+const claimBtn=document.getElementById('claimBtn');
+let shares=0;
+const maxShares=10;
+
+// Floating mini emojis before open
+function floatPreRewards(){
+  const emojis=["💰","🎉","✨"];
+  preRewards.innerHTML="";
+  for(let i=0;i<5;i++){
+    const e=document.createElement('span');
+    e.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.position="absolute";
+    e.style.left=(Math.random()*100)+"px";
+    e.style.top="0px";
+    e.style.fontSize="20px";
+    e.style.animation="flyReward "+(1+Math.random())+"s forwards";
+    preRewards.appendChild(e);
+  }
+}
+
+// Form submission
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(form.message.value.trim().toLowerCase() !== "giveaway"){
+    alert('Please write "Giveaway" in the message field.');
+    return;
+  }
+  form.style.display='none';
+  lifafa.style.display='block';
+  setInterval(floatPreRewards,700);
+});
+
+// Lifafa click → suspense + winner
+lifafa.addEventListener('click', function(){
+    lifafa.style.pointerEvents = 'none';
+    lifafa.style.animation='heartbeat 0.3s ease-in-out 5';
+    const messages = [
+        '💓 Let\'s check if you won...',
+        '🤔 Could it be ₹5,000 or ₹10,000?',
+        '🎁 What\'s inside your lifafa?',
+        '✨ Fingers crossed...',
+        '🔮 Let fate decide your prize...'
+    ];
+    suspenseText.style.display = 'block';
+    let delay = 0;
+    messages.forEach((msg, index) => {
+        setTimeout(() => { suspenseText.textContent = msg; }, delay);
+        delay += 2000 + Math.random()*1000;
+    });
+    setTimeout(() => {
+        suspenseText.style.display='none';
+        winnerText.style.display='block';
+        lifafa.classList.add('open');
+        launchConfetti();
+        showRewards();
+        shareSection.style.display='block';
+        coinSound.currentTime=0;
+        coinSound.play();
+    }, delay + 500);
+});
+
+// Heartbeat keyframe
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule('@keyframes heartbeat{0%{transform:scale(1);}25%{transform:scale(1.1);}50%{transform:scale(0.95);}75%{transform:scale(1.05);}100%{transform:scale(1);}}',styleSheet.cssRules.length);
+
+// Rewards
+function showRewards(){
+  const emojis = ["💰","🎉","✨","💎","🏆"];
+  for(let i=0;i<20;i++){
+    setTimeout(()=>{
+      const reward=document.createElement('div');
+      reward.className='reward';
+      reward.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+      reward.style.left=(lifafa.offsetLeft + 50 + Math.random()*50)+'px';
+      reward.style.top=(lifafa.offsetTop + 50)+'px';
+      document.body.appendChild(reward);
+      const sparkleCount = 3 + Math.floor(Math.random()*3);
+      for(let s=0;s<sparkleCount;s++){
+        const sparkle=document.createElement('div');
+        sparkle.className='reward-sparkle';
+        sparkle.textContent='✨';
+        sparkle.style.left=reward.style.left;
+        sparkle.style.top=reward.style.top;
+        document.body.appendChild(sparkle);
+        setTimeout(()=>{ sparkle.remove(); }, 1000);
+      }
+      const dx = (Math.random()-0.5)*200;
+      const dy = -150 - Math.random()*100;
+      reward.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+      setTimeout(()=>{ reward.style.transform = `translate(${dx}px, ${dy}px) rotate(${Math.random()*360}deg) scale(1.2)`; reward.style.opacity=0; },50);
+      setTimeout(()=>{ reward.remove(); },1200);
+    }, i*150);
+  }
+}
+
+// Share buttons
+const pageLink=encodeURIComponent('https://t.me/Quantex_coin');
+const shareText=encodeURIComponent('Join this ₹10,000 Giveaway and get higher chances to win! 🎉');
+function handleShare(url){
+    if(shares<maxShares){
+        window.open(url,'_blank');
+        shares++;
+        shareCounter.textContent=shares+' / '+maxShares+' shared';
+    }
+    if(shares===maxShares){ claimBtn.style.display='inline-block'; claimBtn.classList.add('glowClaim'); }
+}
+
+document.getElementById('shareTelegram').addEventListener('click',()=>{ handleShare(`https://t.me/share/url?url=${pageLink}&text=${shareText}`); });
+document.getElementById('shareWhatsApp').addEventListener('click',()=>{ handleShare(`https://api.whatsapp.com/send?text=${shareText} ${pageLink}`); });
+
+// Claim
+claimBtn.addEventListener('click',()=>{ window.open('https://t.me/Quantex_coin','_blank'); });
+
+// Confetti
+function launchConfetti(){
+const canvas=document.querySelector('.confetti');const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+const confettiCount=150;const confettis=[];
+for(let i=0;i<confettiCount;i++){confettis.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,r:Math.random()*6+4,d:Math.random()*confettiCount,color:`hsl(${Math.random()*360},100%,50%)`,tilt:Math.random()*10-10,tiltAngleIncrement:Math.random()*0.07+0.05});}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);confettis.forEach((c)=>{ctx.beginPath();ctx.lineWidth=c.r/2;ctx.strokeStyle=c.color;ctx.moveTo(c.x+c.tilt+c.r/4,c.y);ctx.lineTo(c.x+c.tilt,c.y+c.tilt+c.r/4);ctx.stroke();});update();}
+function update(){confettis.forEach((c)=>{c.tiltAngle+=c.tiltAngleIncrement;c.y+=(Math.cos(c.d)+3+c.r/2)/2;c.tilt=Math.sin(c.tiltAngle)*15;if(c.y>canvas.height){c.y=-10;c.x=Math.random()*canvas.width;}});}
+let anim=setInterval(draw,20);setTimeout(()=>{clearInterval(anim);ctx.clearRect(0,0,canvas.width,canvas.height);},5000);
+}
+</script>
+</body>
+</html>
